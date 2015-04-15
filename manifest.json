@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "LastAccount",
+  "version": "0.0.0",
+
+  "description": "Autofill user credentials on every site with a single template",
+  "icons": { 
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png" 
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon19.png",
+      "38": "images/icon38.png"
+    },
+    "default_title": "LastAccount",
+    "default_popup": "popup.html"
+  },
+
+  "author": "Jimmy Gong and Jake Obron",
+  "commands": {
+    /*
+      TODO: Add keyboard shortcuts here
+    */
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"    
+  ]
+}
