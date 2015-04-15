@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title></title>
+  <script src="jquery.js"></script>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <form method='POST' id='form' action="https://www.example.com">
+      <label for="firstName"> First Name:</label>
+      <input id="first-name" type="text">
+      <br>
+      <label for="lastname"> Last Name:</label>
+      <input name="lastName" type="text">
+      <br>
+      <label for="email"> Email:</label>
+      <input id="emailAddress" type="text">
+
+
+    <div class= "field-container">
+      <input type="submit" name="submit" value="Create Account">
+    </div>
+  </form>
+  <script>
+    //TODO: (See amazon signup, they asks for full name) if id/name has "name" in substring but not "first" or "last" we should enter their full name
+    var myInfo = {
+      first: "Jake",
+      last: "Obron",
+      email: "jbobron@gmail.com"
+    }
+    $( window ).load(function() {
+      var text = "hello jimmy";
+      //grab input tag
+      // var tag = document.getElementById("myInput")
+      // setTimeout(function(){tag.value = text}, 1000)
+      // var x = document.body.getElementByName("LABEL")
+      // console.log(x)
+      var labels = document.getElementsByTagName('LABEL');
+      var all = document.getElementsByTagName("*");
+      for(var i = 0; i < all.length; i++){
+        currentTag = all[i];
+
+        if(tagIsOfTypeInputAndTextOrEmail(currentTag)){
+          //1. check input tag name, id and placeholder for keywords
+          if(findTagNameKeyword(currentTag)){
+            var key = findTagNameKeyword(currentTag);
+            currentTag.value = myInfo[key]
+          }
+          //if above returns undefined run this
+          if(findTagIdKeyword(currentTag)){
+            var key = findTagIdKeyword(currentTag);
+            currentTag.value = myInfo[key]
+          }
+        }
+      }
+    });
+
+    function tagIsOfTypeInputAndTextOrEmail(tag){
+      return tag.tagName === "INPUT" && (tag.type === "text" || tag.type === 'email');
+    }
+
+    function findTagNameKeyword(tag){
+      var keyword = tag.name;
+      var element = findEquivalentKeyword(keyword);
+      return element;
+    }
+
+    function findTagIdKeyword(tag){
+      var keyword = tag.id;
+      var element = findEquivalentKeyword(keyword);
+      return element;
+    }
+
+    function findEquivalentKeyword(key){
+      var key = key.toLowerCase();
+      for(var element in myInfo){
+        if(key.indexOf(element) !== -1){
+          return element;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+
+
