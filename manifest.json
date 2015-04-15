@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "LastAccount",
-  "version": "0.0.0",
+  "version": "0.0.1",
 
   "description": "Autofill user credentials on every site with a single template",
   "icons": { 
@@ -20,10 +20,21 @@
   },
 
   "author": "Jimmy Gong and Jake Obron",
+  "background": {
+    //TODO: Add background script
+    "scripts": [],
+    "persistent": false
+  },
   "commands": {
     /*
       TODO: Add keyboard shortcuts here
     */
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true,
+    "open_in_tab": false
   },
   "permissions": [
     "activeTab",
