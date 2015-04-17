@@ -38,6 +38,7 @@
     "chrome_style": true,
     "open_in_tab": false
   },
+  "content_security_policy": "script-src 'self' https://*.googleapis.com; object-src 'self'",
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"    

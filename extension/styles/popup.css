@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(241,241,241);
+  -webkit-font-smoothing: antialiased;
+}
+button{
+  outline: none;
+  margin: 0;
+  padding: 20;
+  width:100%;
+  font-size: 70%;
+}
