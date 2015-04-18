@@ -1,7 +1,7 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-  // No tabs or host permissions needed!
-  console.log('Turning ' + tab.url + ' red!');
-  chrome.tabs.executeScript({
-    code: 'document.body.style.backgroundColor="red"'
-  });
+chrome.commands.onCommand.addListener(function(command) {
+  if (command === 'fill-credentials'){
+    chrome.tabs.executeScript(null, {
+      file: "extension/actions/autofill.js"
+    });
+  }
 });

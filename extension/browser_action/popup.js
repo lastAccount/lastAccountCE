@@ -4,16 +4,16 @@ $(function(){
    */
   $('#edit-template').click(function(){
     chrome.tabs.executeScript(null, {
-      file: "extension/browser_action/redirect.js"
+      file: "extension/actions/redirect.js"
     });
   });
 
   /**
    * Autofill current tab's form
    */
-  $('#autofill').click(function(){
-    chrome.tabs.executeScript(null, {
+  // $('#autofill').click(function(){
+  //   chrome.tabs.executeScript(null, {
 
-    });
-  });
+  //   });
+  // });
 });

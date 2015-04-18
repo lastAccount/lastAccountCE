@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "LastAccount",
-  "version": "0.0.1",
+  "version": "0.1.0",
 
   "description": "Autofill user credentials on every site with a single template",
   "icons": { 
@@ -31,6 +31,13 @@
     /*
       TODO: Add keyboard shortcuts here
     */
+    "fill-credentials": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Fill form credentials of current tab"  
+    }
   },
   "options_page": "extension/options/options.html",
   "options_ui": {
@@ -41,6 +48,7 @@
   "content_security_policy": "script-src 'self' https://*.googleapis.com; object-src 'self'",
   "permissions": [
     "activeTab",
-    "https://ajax.googleapis.com/"    
+    "http://*/*",
+    "https://*/*"    
   ]
 }
