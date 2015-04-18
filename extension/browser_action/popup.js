@@ -1,21 +1,19 @@
 $(function(){
+  /**
+   * Redirect to extension site
+   */
   $('#edit-template').click(function(){
-    getCurrentTab(function(tab){
-      chrome.tabs.executeScript(tab.id ,{
-        code: "window.open('http://reddit.com')"
-        // code: "document.body.style.backgroundColor='red';"
-      });
+    chrome.tabs.executeScript(null, {
+      file: "extension/browser_action/redirect.js"
+    });
+  });
+
+  /**
+   * Autofill current tab's form
+   */
+  $('#autofill').click(function(){
+    chrome.tabs.executeScript(null, {
+
     });
   });
 });
-
-
-function getCurrentTab(callback) {
-  chrome.tabs.query({
-    active: true,
-    currentWindow: true
-  }, function(tabs) {
-    var tab = tabs[0];
-    callback(tab);
-  });
-}
